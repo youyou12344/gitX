@@ -1,0 +1,23 @@
+{
+  "name": "gitx",
+  "version": "1.0.0",
+  "description": "*测试 git subtree --2022/05/31*",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youyou12344/gitX.git"
+  },
+  "dependencies": {
+    "gitC": "git+https://e.coding.net/interval-yy/git/gitC.git#2006121701",
+    "gitB": "git+https://e.coding.net/interval-yy/git/gitB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youyou12344/gitX/issues"
+  },
+  "homepage": "https://github.com/youyou12344/gitX#readme"
+}
