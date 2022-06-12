@@ -10,7 +10,7 @@
     "url": "git+https://github.com/youyou12344/gitX.git"
   },
   "dependencies": {
-    "gitC": "git+https://e.coding.net/interval-yy/git/gitC.git#2006121701",
+    "gitC": "git+https://e.coding.net/interval-yy/git/gitC.git#5970c05ae1a2f16ba7b9d84051ccd07f71abcdf7",
     "gitB": "git+https://e.coding.net/interval-yy/git/gitB.git"
   },
   "keywords": [],

@@ -64,5 +64,43 @@ added 1 package in 1s
   - 仓库对应的 tag : https://interval-yy.coding.net/p/git/d/gitC/git/tree/2006121701
   - 仓库对应的 tag 包: https://interval-yy.coding.net/p/git/d/gitC/git/releases/1 (需要手动发布版本)
 
-*不知道怎么指定tag版本--2022/06/12*  
+最后，通过查看 package-lock.json ，知道怎么指定 tag 版本。不能用 tag-name ，而是要用 commit-id 。
+``` js
+// package-lock.json
+{
+  "packages": {
+    "node_modules/gitC": {
+      "name": "gitc",
+      "version": "1.0.0",
+      // 下载的真正版本 1
+      "resolved": "git+https://e.coding.net/interval-yy/git/gitC.git#5970c05ae1a2f16ba7b9d84051ccd07f71abcdf7",
+      "license": "ISC"
+    }
+  },
+  "dependencies": {
+    "gitC": {
+      // 下载的真正版本 2
+      "version": "git+https://e.coding.net/interval-yy/git/gitC.git#5970c05ae1a2f16ba7b9d84051ccd07f71abcdf7",
+      // form 不起作用
+      "from": "gitC@git+https://e.coding.net/interval-yy/git/gitC.git#f9956e2225b98bdf5255c7c396a198c77549f34e"
+    }
+  }
+}
+```
+如果已经安装过 gitC ，要删除 package-lock.json ! 才能修改 package-lock.json 中的 resolved 字段。
 
+
+``` js
+// packages
+    "node_modules/less": {
+      "version": "2.7.3",
+      "resolved": "https://registry.npmjs.org/less/-/less-2.7.3.tgz", // 下载源
+    },
+// dependencies
+    "less": {
+      "version": "2.7.3",
+      "resolved": "https://registry.npmjs.org/less/-/less-2.7.3.tgz",
+      "integrity": "sha512-KPdIJKWcEAb02TuJtaLrhue0krtRLoRoo7x6BNJIBelO00t/CCdJQUnHW5V34OnHMWzIktSalJxRO+FvytQlCQ==",
+      "dev": true,
+    }
+```
